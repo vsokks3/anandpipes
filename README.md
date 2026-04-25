@@ -64,20 +64,22 @@ npm run dev
 
 ## Deploy to GitHub Pages
 
-This project is configured for static export with GitHub Pages.
+This project is configured for static export with GitHub Pages and the custom domain `anandpipes.in`.
 
 1. Push the repository to GitHub.
 2. In GitHub, open **Settings > Pages**.
 3. Set **Source** to **GitHub Actions**. Do not use **Deploy from a branch**, because that serves the repository files and can show this README instead of the exported website.
 4. Push to the `main` branch, or run the **Deploy to GitHub Pages** workflow manually.
 
-The workflow builds the site into `out/` and deploys it to Pages. The Next config currently uses `/anandpipes` as the base path so `https://vsokks3.github.io/anandpipes/` loads CSS and images correctly.
+The workflow builds the site into `out/` and deploys it to Pages. The Next config currently uses root paths so `https://anandpipes.in/` loads CSS and images correctly.
 
-When `anandpipes.in` is ready as the primary domain, change the `basePath` fallback in `next.config.ts`, `app/page.tsx`, `components/navbar.tsx`, and `components/brand-grid.tsx` from `/anandpipes` to an empty string. Then add `public/CNAME` with this content:
+The `public/CNAME` file keeps GitHub Pages mapped to the custom domain:
 
 ```text
 anandpipes.in
 ```
+
+If you temporarily want to use the GitHub project URL `https://vsokks3.github.io/anandpipes/` instead, change the `basePath` fallback in `next.config.ts`, `app/page.tsx`, `components/navbar.tsx`, and `components/brand-grid.tsx` from an empty string to `/anandpipes`, and remove `public/CNAME`.
 
 In Hostinger DNS, point the domain to GitHub Pages:
 

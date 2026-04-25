@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/anandpipes";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 type Brand = {
   name: string;

@@ -235,7 +235,7 @@ function WaveUp({ fillClass }: { fillClass: string }) {
 
 /* ── Page ────────────────────────────────────────────────── */
 export default function Home() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/anandpipes";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return (
     <main id="top">
