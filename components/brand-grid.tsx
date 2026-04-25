@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 
 type Brand = {
@@ -20,53 +19,53 @@ type BrandGridProps = {
 
 export function BrandGrid({ title, description, brands }: BrandGridProps) {
   return (
-    <section className="water-card water-outline rounded-[1.5rem] p-5 lg:rounded-[2rem] lg:p-8">
-      <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <div className="card-white rounded-2xl p-4 sm:p-6 lg:rounded-3xl lg:p-8">
+      <div className="mb-5 flex items-start justify-between gap-4 sm:mb-6">
         <div>
-          <h3 className="text-xl font-semibold tracking-tight text-slate-950 lg:text-2xl">{title}</h3>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">{description}</p>
+          <h3 className="text-lg font-bold tracking-tight text-gray-900 lg:text-xl">{title}</h3>
+          <p className="mt-1 text-sm text-gray-500">{description}</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 lg:grid-cols-5">
         {brands.map((brand, index) => (
-          <RevealOnScroll key={brand.name} delayMs={index * 60}>
-            <div className="group flex h-24 items-center justify-center rounded-xl border border-sky-100 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(233,245,252,0.92))] px-3 text-center transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg hover:shadow-sky-950/5 lg:h-28 lg:rounded-2xl lg:px-4">
+          <RevealOnScroll key={brand.name} delayMs={index * 55}>
+            <div className="group flex h-20 cursor-default items-center justify-center rounded-xl border border-gray-100 bg-gray-50/60 px-2.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-100 hover:bg-white hover:shadow-md sm:h-24 sm:px-3 lg:h-28 lg:rounded-2xl">
               {brand.image ? (
                 <div
-                  className={`flex w-full items-center justify-center rounded-xl px-2 py-2 lg:px-3 lg:py-3 ${
+                  className={`flex w-full items-center justify-center rounded-lg px-2 py-1 ${
                     brand.tone === "dark"
-                      ? "bg-slate-900"
+                      ? "bg-gray-900"
                       : brand.tone === "soft"
-                        ? "bg-[linear-gradient(135deg,#ffffff,#eff6ff_45%,#dbeafe)] border border-sky-100 shadow-sm"
+                        ? "bg-linear-to-br from-white to-blue-50"
                         : "bg-transparent"
                   }`}
                 >
                   <Image
                     src={brand.image}
-                    alt={`${brand.name} brand logo`}
+                    alt={`${brand.name} logo`}
                     width={brand.size === "xl" ? 320 : brand.size === "large" ? 190 : 160}
                     height={brand.size === "xl" ? 120 : brand.size === "large" ? 72 : 60}
                     loading="lazy"
                     className={`brand-logo h-auto w-auto object-contain ${
                       brand.size === "xl"
-                        ? "max-h-16 lg:max-h-24"
+                        ? "max-h-14 sm:max-h-16 lg:max-h-20"
                         : brand.size === "large"
-                          ? "max-h-12 lg:max-h-16"
-                          : "max-h-11 lg:max-h-14"
+                          ? "max-h-10 sm:max-h-12 lg:max-h-16"
+                          : "max-h-9 sm:max-h-10 lg:max-h-13"
                     }`}
                   />
                 </div>
               ) : (
                 <span
-                  className={`rounded-full px-3 py-2 text-xs font-medium lg:px-4 lg:text-sm ${
+                  className={`max-w-full rounded-full px-2.5 py-1.5 text-center text-[11px] font-semibold leading-snug sm:px-3 sm:text-xs ${
                     brand.badgeStyle === "navy"
-                      ? "border border-slate-800 bg-slate-900 text-white shadow-sm"
+                      ? "bg-gray-900 text-white"
                       : brand.badgeStyle === "teal"
-                        ? "border border-cyan-200 bg-cyan-50 text-cyan-900"
+                        ? "border border-cyan-200 bg-cyan-50 text-cyan-800"
                         : brand.badgeStyle === "slate"
-                          ? "border border-slate-200 bg-slate-100 text-slate-800"
-                          : "border border-sky-100 bg-white/90 text-slate-700"
+                          ? "border border-gray-200 bg-gray-100 text-gray-700"
+                          : "border border-blue-100 bg-blue-50 text-blue-800"
                   }`}
                 >
                   {brand.name}
@@ -76,6 +75,6 @@ export function BrandGrid({ title, description, brands }: BrandGridProps) {
           </RevealOnScroll>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

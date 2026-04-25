@@ -35,7 +35,7 @@ Premium, fully responsive business website for Anand Pipe Agencies built with Ne
 |   |-- Gravity.png
 |   |-- Neelkund.png
 |   |-- Suguna.png
-|   `-- bg-image-actual-size.png
+|   `-- luxury-bathroom-jacuzzi-hero.png
 |-- next.config.ts
 |-- next-env.d.ts
 |-- package.json
@@ -62,6 +62,6 @@ npm install
 npm run dev
 ```
 
-## Important Note
+## Contact Number
 
-Update all placeholder contact links using `+91XXXXXXXXXX` with the actual business phone number before deployment.
+Primary phone and WhatsApp number: `+91 7305400590`.
