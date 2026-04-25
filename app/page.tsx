@@ -277,9 +277,9 @@ export default function Home() {
               </div>
 
               <h1 className="hero-support-headline mt-7 max-w-2xl text-2xl font-medium leading-[1.18] tracking-tight sm:text-3xl md:text-4xl lg:text-[2.6rem]">
-                Complete Bathroom &amp; Plumbing Solutions
+                Curated Luxury for Beautiful Bathrooms
                 <br className="hidden sm:block" />
-                <span className="hero-headline-accent">for Homes, Builders &amp; Projects</span>
+                <span className="hero-headline-accent">Premium Sanitaryware, Fittings &amp; Plumbing</span>
               </h1>
 
               <p className="hero-intro-copy mt-5 max-w-xl text-sm font-medium leading-7 sm:text-base sm:leading-8 lg:text-[1.08rem]">
