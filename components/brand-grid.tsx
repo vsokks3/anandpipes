@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/anandpipes";
+
 type Brand = {
   name: string;
   image?: string;
@@ -42,7 +44,7 @@ export function BrandGrid({ title, description, brands }: BrandGridProps) {
                   }`}
                 >
                   <Image
-                    src={brand.image}
+                    src={`${basePath}${brand.image}`}
                     alt={`${brand.name} logo`}
                     width={brand.size === "xl" ? 320 : brand.size === "large" ? 190 : 160}
                     height={brand.size === "xl" ? 120 : brand.size === "large" ? 72 : 60}

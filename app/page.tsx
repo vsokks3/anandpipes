@@ -235,7 +235,7 @@ function WaveUp({ fillClass }: { fillClass: string }) {
 
 /* ── Page ────────────────────────────────────────────────── */
 export default function Home() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/anandpipes";
 
   return (
     <main id="top">
@@ -258,7 +258,7 @@ export default function Home() {
               <div className="flex items-center gap-4 sm:gap-5">
                 <div className="hero-logo-mark">
                   <Image
-                    src="/anand_logo.png"
+                    src={`${basePath}/anand_logo.png`}
                     alt="Anand Pipes logo"
                     width={128}
                     height={128}
@@ -805,7 +805,7 @@ export default function Home() {
             {/* Brand */}
             <div>
               <Image
-                src="/anand_logo.png"
+                src={`${basePath}/anand_logo.png`}
                 alt="Anand Pipe Agencies"
                 width={220}
                 height={72}

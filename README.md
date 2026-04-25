@@ -64,14 +64,20 @@ npm run dev
 
 ## Deploy to GitHub Pages
 
-This project is configured for static export with GitHub Pages and the custom domain `anandpipes.in`.
+This project is configured for static export with GitHub Pages.
 
 1. Push the repository to GitHub.
 2. In GitHub, open **Settings > Pages**.
 3. Set **Source** to **GitHub Actions**. Do not use **Deploy from a branch**, because that serves the repository files and can show this README instead of the exported website.
 4. Push to the `main` branch, or run the **Deploy to GitHub Pages** workflow manually.
 
-The workflow builds the site into `out/` and deploys it to Pages. The `public/CNAME` file configures GitHub Pages for `anandpipes.in`.
+The workflow builds the site into `out/` and deploys it to Pages. The Next config currently uses `/anandpipes` as the base path so `https://vsokks3.github.io/anandpipes/` loads CSS and images correctly.
+
+When `anandpipes.in` is ready as the primary domain, change the `basePath` fallback in `next.config.ts`, `app/page.tsx`, `components/navbar.tsx`, and `components/brand-grid.tsx` from `/anandpipes` to an empty string. Then add `public/CNAME` with this content:
+
+```text
+anandpipes.in
+```
 
 In Hostinger DNS, point the domain to GitHub Pages:
 

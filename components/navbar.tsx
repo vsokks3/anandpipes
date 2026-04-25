@@ -13,6 +13,8 @@ const navItems = [
   { href: "#contact",   label: "Contact" },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/anandpipes";
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,7 +39,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="#top" className="flex shrink-0 items-center gap-3">
           <Image
-            src="/anand_logo.png"
+            src={`${basePath}/anand_logo.png`}
             alt="Anand Pipe Agencies"
             width={220}
             height={72}
