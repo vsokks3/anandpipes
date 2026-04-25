@@ -235,12 +235,21 @@ function WaveUp({ fillClass }: { fillClass: string }) {
 
 /* ── Page ────────────────────────────────────────────────── */
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <main id="top">
       <Navbar />
 
       {/* ══ HERO ══════════════════════════════════════════════ */}
-      <section className="hero-bg relative overflow-hidden">
+      <section
+        className="hero-bg relative overflow-hidden"
+        style={
+          {
+            "--hero-bg-image": `url("${basePath}/luxury-bathroom-jacuzzi-hero.png")`,
+          } as React.CSSProperties
+        }
+      >
         <div className="bathroom-live-bg" aria-hidden />
 
         <div className="container-shell relative flex min-h-[calc(100svh-4.5rem)] items-center py-12 sm:py-16 lg:py-36">

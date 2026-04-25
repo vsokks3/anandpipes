@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://anandpipeagencies.in"),
+  metadataBase: new URL("https://anandpipes.in"),
   title: "Anand Pipe Agencies Erode | PVC, CPVC, UPVC Pipes, Bath Fittings, Pumps",
   description:
     "Premium showroom in Erode for PVC, CPVC, UPVC pipes and fittings, bath fittings, sanitaryware, water tanks, pumps and motors.",

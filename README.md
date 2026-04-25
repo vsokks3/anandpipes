@@ -62,6 +62,24 @@ npm install
 npm run dev
 ```
 
+## Deploy to GitHub Pages
+
+This project is configured for static export with GitHub Pages and the custom domain `anandpipes.in`.
+
+1. Push the repository to GitHub.
+2. In GitHub, open **Settings > Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Push to the `main` branch, or run the **Deploy to GitHub Pages** workflow manually.
+
+The workflow builds the site into `out/` and deploys it to Pages. The `public/CNAME` file configures GitHub Pages for `anandpipes.in`.
+
+In Hostinger DNS, point the domain to GitHub Pages:
+
+- `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `CNAME` record for `www`: `<your-github-username>.github.io`
+
+After DNS is set, add `anandpipes.in` in **GitHub repo > Settings > Pages > Custom domain** and enable HTTPS when available.
+
 ## Contact Number
 
 Primary phone and WhatsApp number: `+91 7305400590`.
