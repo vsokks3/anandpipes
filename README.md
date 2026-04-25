@@ -68,7 +68,7 @@ This project is configured for static export with GitHub Pages and the custom do
 
 1. Push the repository to GitHub.
 2. In GitHub, open **Settings > Pages**.
-3. Set **Source** to **GitHub Actions**.
+3. Set **Source** to **GitHub Actions**. Do not use **Deploy from a branch**, because that serves the repository files and can show this README instead of the exported website.
 4. Push to the `main` branch, or run the **Deploy to GitHub Pages** workflow manually.
 
 The workflow builds the site into `out/` and deploys it to Pages. The `public/CNAME` file configures GitHub Pages for `anandpipes.in`.
