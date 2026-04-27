@@ -23,6 +23,43 @@ import type { Brand } from "@/components/brand-grid";
 import { Navbar } from "@/components/navbar";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 
+/* ── Structured data ─────────────────────────────────────── */
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://anandpipes.in",
+  name: "Anand Pipe Agencies",
+  description:
+    "Premium showroom in Erode for PVC, CPVC, UPVC pipes and fittings, bath fittings, sanitaryware, water tanks, pumps and motors.",
+  url: "https://anandpipes.in",
+  telephone: "+917305400590",
+  image: "https://anandpipes.in/anand_logo.png",
+  hasMap: "https://maps.app.goo.gl/3uA7K8H7PvvGow5z6",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "143 APT Road, Near CD Building",
+    addressLocality: "Erode",
+    addressRegion: "Tamil Nadu",
+    postalCode: "638001",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 11.349772,
+    longitude: 77.723527,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:30",
+      closes: "20:30",
+    },
+  ],
+};
+
 /* ── Data ─────────────────────────────────────────────────── */
 
 const categories = [
@@ -239,6 +276,10 @@ export default function Home() {
 
   return (
     <main id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <Navbar />
 
       {/* ══ HERO ══════════════════════════════════════════════ */}

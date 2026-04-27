@@ -1,11 +1,17 @@
 {
   "permissions": {
     "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npm ci)",
+      "Bash(npm install)",
       "Bash(npx tsc *)",
       "Bash(npx next *)",
-      "WebFetch(domain:api.anthropic.com)",
-      "Bash(Get-Content \"d:\\\\Projects\\\\vsokks3\\\\anand\\\\anandpipes\\\\app\\\\page.tsx\")",
-      "Bash(Get-Content \"d:\\\\Projects\\\\vsokks3\\\\anand\\\\anandpipes\\\\app\\\\globals.css\")"
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)"
     ]
   }
 }
