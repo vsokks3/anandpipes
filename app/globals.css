@@ -342,6 +342,11 @@ img, svg, iframe { max-width: 100%; }
 
 .brand-tile img.brand-img--lg { max-height: 4.35rem; }
 
+.brand-tile img.brand-img--compact {
+  max-width: 8.5rem;
+  max-height: 2.8rem;
+}
+
 .brand-tile--dark { background: var(--ink); }
 
 .brand-tile--text {
