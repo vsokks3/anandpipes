@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import type { ReactNode } from "react";
 
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-outfit",
+  variable: "--font-display",
 });
 
 // Keywords derived from product categories, brand partners, and location data in page.tsx
@@ -33,7 +24,7 @@ const siteKeywords = [
   "concealed fittings Erode", "bath accessories Erode",
   // Bath & sanitaryware brands
   "Kohler dealer Erode", "Jaquar dealer Erode", "Parryware dealer Erode",
-  "American Standard Erode", "Gravity fittings Erode",
+  "Gravity fittings Erode",
   // Pipe brands
   "Finolex pipes Erode", "Ashirvad pipes Erode", "Avonplast pipes Erode",
   // Tank brands
@@ -68,18 +59,18 @@ export const metadata: Metadata = {
     url: "https://anandpipes.in",
     images: [
       {
-        url: "/anand_logo.png",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
+        width: 384,
+        height: 384,
         alt: "Anand Pipe Agencies logo"
       }
     ]
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: siteTitle,
     description: siteDescription,
-    images: ["/anand_logo.png"]
+    images: ["/logo.png"]
   }
 };
 
@@ -89,7 +80,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${outfit.variable}`}>
+    <html lang="en" className={bricolage.variable}>
       <body>{children}</body>
     </html>
   );

@@ -1,0 +1,7 @@
+<svg width="360" height="140" viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="68" cy="70" r="50" fill="#1A1410"/>
+  <path d="M68 40 C 84 58, 84 78, 68 96 C 52 78, 52 58, 68 40 Z" fill="#E0B04E"/>
+  <text x="150" y="78" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="42" letter-spacing="3" fill="#1A1410">PILLER</text>
+  <line x1="151" y1="92" x2="330" y2="92" stroke="#C4963A" stroke-width="3"/>
+  <text x="151" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="15" letter-spacing="5" fill="#7B6F61">PUMPS</text>
+</svg>

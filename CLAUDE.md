@@ -25,7 +25,7 @@ npx tsc --noEmit     # type-check without emitting
 
 ```
 app/            layout.tsx · page.tsx · globals.css
-components/     navbar.tsx · brand-grid.tsx · reveal-on-scroll.tsx
+components/     navbar.tsx · brand-grid.tsx · reveal-on-scroll.tsx · map-embed.tsx (click-to-load Google map) · tilt-card.tsx (pointer 3D tilt)
 public/         images + CNAME (anandpipes.in)
 .github/workflows/deploy-pages.yml   CI: Node 20, npm ci + build → Pages
 ```

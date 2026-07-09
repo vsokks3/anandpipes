@@ -1,0 +1,8 @@
+<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="34" cy="40" r="24" fill="none" stroke="#C22127" stroke-width="4"/>
+  <circle cx="34" cy="40" r="16.5" fill="none" stroke="#E58A8D" stroke-width="2"/>
+  <text x="34" y="49" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="26" fill="#C22127">O</text>
+  <text x="70" y="46" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="28" letter-spacing="2" fill="#C22127">OXFORD</text>
+  <line x1="71" y1="56" x2="206" y2="56" stroke="#C22127" stroke-width="2"/>
+  <text x="71" y="70" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="10" letter-spacing="3.5" fill="#8A5A5C">TANKS &amp; PIPES</text>
+</svg>

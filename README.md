@@ -26,15 +26,18 @@ Premium, fully responsive business website for Anand Pipe Agencies built with Ne
 |   |-- anand_logo.png
 |   |-- Kohler.png
 |   |-- parryware.png
-|   |-- american-standard.png
-|   |-- Jaguar-ESSCO.jpg
+|   |-- jaquar.svg
 |   |-- finolex.png
 |   |-- ashirvad.png
 |   |-- Avonplast.png
 |   |-- aquatech.png
+|   |-- oxford.svg
 |   |-- Gravity.png
 |   |-- Neelkund.png
 |   |-- Suguna.png
+|   |-- piller-pumps.svg
+|   |-- leader-pumps.svg
+|   |-- texmo.png
 |   `-- luxury-bathroom-jacuzzi-hero.png
 |-- next.config.ts
 |-- next-env.d.ts
