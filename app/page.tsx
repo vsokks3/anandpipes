@@ -3,9 +3,12 @@ import Link from "next/link";
 import { MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
 import { BrandGrid } from "@/components/brand-grid";
+import { HeroRipples } from "@/components/hero-ripples";
 import { MapEmbed } from "@/components/map-embed";
 import { Navbar } from "@/components/navbar";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
+import { TiltCard } from "@/components/tilt-card";
+import { WaterLine3D } from "@/components/water-line-3d";
 
 /* ── Structured data ─────────────────────────────────────── */
 
@@ -17,7 +20,7 @@ const localBusinessSchema = {
   description:
     "Premium showroom in Erode for PVC, CPVC, UPVC pipes and fittings, bath fittings, sanitaryware, water tanks, pumps and motors.",
   url: "https://anandpipes.in",
-  telephone: "+917305400590",
+  telephone: ["+919842721013", "+919043821013"],
   image: "https://anandpipes.in/logo.png",
   hasMap: "https://maps.app.goo.gl/3uA7K8H7PvvGow5z6",
   priceRange: "$$",
@@ -52,7 +55,7 @@ const stations = [
     stage: "Source",
     title: "Pumps & Motors",
     text: "Domestic, agricultural and industrial pumps that lift water from borewell to building.",
-    brands: ["Suguna", "Texmo", "Piller", "Turbo Leader", "Bindhu"],
+    brands: ["Suguna", "Piller", "Turbo Leader", "Bindhu"],
   },
   {
     num: "02",
@@ -66,14 +69,14 @@ const stations = [
     stage: "Storage",
     title: "Water Tanks",
     text: "Triple-layer overhead and underground tanks in every capacity, home to commercial.",
-    brands: ["Ashirvad", "Oxford", "Aquatech", "Avonplast"],
+    brands: ["Sintex", "Ashirvad", "Oxford", "Aquatech", "Avonplast"],
   },
   {
     num: "04",
     stage: "Delivery",
     title: "Bath, Sanitaryware & Showers",
     text: "Taps, wash basins, WCs, rain showers and jacuzzis — running live on the showroom floor.",
-    brands: ["Jaquar", "Kohler", "Parryware", "Plato", "Gravity", "Neelkund"],
+    brands: ["Jaquar", "Kohler", "Parryware", "Plato", "Watertec", "Varmora", "Gravity", "Neelkund"],
   },
 ];
 
@@ -189,7 +192,7 @@ export default function Home() {
       {/* ══ HERO — walk into a luxury bathroom (drawn, not stock) ══ */}
       <section className="hero-water">
         <Image
-          src={`${basePath}/luxury-bathroom-jacuzzi-hero.png`}
+          src={`${basePath}/luxury-bathroom-jacuzzi-hero.webp`}
           alt="Luxury bathroom jacuzzi showroom display"
           fill
           priority
@@ -198,6 +201,7 @@ export default function Home() {
         />
         <div className="fx-shimmer" aria-hidden />
         <div className="hero-water-grade" aria-hidden />
+        <HeroRipples />
 
         <div className="container-shell relative z-10 flex min-h-[min(92svh,860px)] items-end pb-16 pt-36">
           <div>
@@ -228,18 +232,24 @@ export default function Home() {
               running live, plus every pipe, tank and pump behind them.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="tel:+917305400590" className="btn btn-primary">
+              <Link href="tel:+919842721013" className="btn btn-primary">
                 <PhoneIcon className="h-4 w-4" />
-                Call +91 73054 00590
+                Call +91 98427 21013
               </Link>
               <Link
-                href="https://wa.me/917305400590?text=Hi%20Anand%20Pipe%20Agencies"
+                href="https://wa.me/919842721013?text=Hi%20Anand%20Pipe%20Agencies"
                 target="_blank"
                 className="btn btn-wa"
               >
                 WhatsApp us
               </Link>
             </div>
+            <p className="mt-3 text-sm text-[rgba(226,244,249,0.78)]">
+              Also call{" "}
+              <Link href="tel:+919043821013" className="font-semibold underline underline-offset-2">
+                +91 90438 21013
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -270,17 +280,19 @@ export default function Home() {
           {/* Jaquar — rain shower */}
           <div className="exp-row">
             <div className="exp-row-art">
+              <TiltCard className="rounded-2xl">
               <div className="vignette-card">
                 <Image
-                  src={`${basePath}/showroom-shower-realistic.png`}
+                  src={`${basePath}/showroom-shower-realistic.webp`}
                   alt="Realistic rain shower display running in a premium showroom"
-                  width={1024}
-                  height={768}
+                  width={1200}
+                  height={800}
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="experience-photo"
                 />
                 <ExpWatermark />
               </div>
+              </TiltCard>
             </div>
             <div>
               <p className="eyebrow eyebrow--water">Jaquar · Rain Showers &amp; Taps</p>
@@ -296,17 +308,19 @@ export default function Home() {
           {/* Kohler — tub */}
           <div className="exp-row exp-row--flip">
             <div className="exp-row-art">
+              <TiltCard className="rounded-2xl">
               <div className="vignette-card">
                 <Image
-                  src={`${basePath}/showroom-tub-realistic.png`}
+                  src={`${basePath}/showroom-tub-realistic.webp`}
                   alt="Realistic freestanding bathtub display with a chrome floor-mounted faucet"
-                  width={1024}
-                  height={768}
+                  width={1200}
+                  height={800}
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="experience-photo"
                 />
                 <ExpWatermark />
               </div>
+              </TiltCard>
             </div>
             <div>
               <p className="eyebrow eyebrow--water">Kohler · Tubs &amp; Faucets</p>
@@ -322,17 +336,19 @@ export default function Home() {
           {/* Parryware — basin */}
           <div className="exp-row">
             <div className="exp-row-art">
+              <TiltCard className="rounded-2xl">
               <div className="vignette-card">
                 <Image
-                  src={`${basePath}/showroom-basin-realistic.png`}
+                  src={`${basePath}/showroom-basin-realistic.webp`}
                   alt="Realistic premium basin and faucet display in a showroom"
-                  width={1024}
-                  height={768}
+                  width={1200}
+                  height={800}
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="experience-photo"
                 />
                 <ExpWatermark />
               </div>
+              </TiltCard>
             </div>
             <div>
               <p className="eyebrow eyebrow--water">Parryware · Basins &amp; Sanitaryware</p>
@@ -347,64 +363,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ BEYOND THE BATHROOM (3D showcase) ═════════════════ */}
-      <section id="featured" className="hidden">
-        <div className="container-shell">
-          <div className="hidden">
-            {/* Pipes — CSS-3D pipe, rotates 360° as you scroll */}
-            <RevealOnScroll delayMs={80}>
-              <div className="feature-panel">
-                <div className="scene">
-                  <div className="pipe-tilt">
-                    <div className="hidden">
-                      <div className="pipe-cap pipe-cap--top" style={{ width: 60, height: 60 }} />
-                      <div className="pipe-cap pipe-cap--bottom" style={{ width: 60, height: 60 }} />
-                    </div>
-                    <div className="pipe-sheen" aria-hidden />
-                  </div>
-                </div>
-                <div className="feature-cap">
-                  <p className="eyebrow eyebrow--water">Pipes & Fittings</p>
-                  <h3 className="feature-title">PVC, CPVC & UPVC systems</h3>
-                  <p className="feature-text">
-                    Full pipe ranges with every fitting, always in stock.
-                  </p>
-                  <div className="chips">
-                    <span className="chip">Finolex</span>
-                    <span className="chip">Ashirvad</span>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
-
-            {/* Tanks — CSS-3D tank, rotates 360° as you scroll */}
-            <RevealOnScroll delayMs={160}>
-              <div className="feature-panel">
-                <div className="scene">
-                  <div className="tank-tilt">
-                    <div className="hidden">
-                      <div className="tank-cap" style={{ width: 136, height: 136 }} />
-                    </div>
-                  </div>
-                  <div className="tank-sheen" aria-hidden />
-                </div>
-                <div className="feature-cap">
-                  <p className="eyebrow eyebrow--water">Water Tanks</p>
-                  <h3 className="feature-title">Triple-layer storage tanks</h3>
-                  <p className="feature-text">
-                    Overhead and underground, in every capacity.
-                  </p>
-                  <div className="chips">
-                    <span className="chip">Ashirvad</span>
-                    <span className="chip chip--red">Oxford</span>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
-          </div>
-        </div>
-      </section>
-
       {/* ══ THE WATER LINE ════════════════════════════════════ */}
       <section id="products" className="section-pad">
         <div className="container-shell">
@@ -415,37 +373,32 @@ export default function Home() {
             </h2>
           </RevealOnScroll>
 
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_440px] xl:grid-cols-[minmax(0,1fr)_500px]">
-          <div className="journey">
-            <div className="spine" aria-hidden>
-              <div className="spine-fill" />
-            </div>
-            {stations.map((s, i) => (
-              <RevealOnScroll key={s.num} delayMs={i * 60}>
-                <div className="station">
-                  <div className="station-node">
-                    <span className="font-mono text-[0.7rem] font-bold">{s.num}</span>
-                  </div>
-                  <div>
-                    <p className="eyebrow eyebrow--water">{s.stage}</p>
-                    <h3 className="station-title">{s.title}</h3>
-                    <p className="station-text">{s.text}</p>
-                    <div className="chips">
-                      {s.brands.map((b) => (
-                        <span key={b} className="chip">{b}</span>
-                      ))}
+          <div className="waterline">
+            <WaterLine3D fallback={<HeroSchematic />} />
+            <div className="journey">
+              <div className="spine" aria-hidden>
+                <div className="spine-fill" />
+              </div>
+              {stations.map((s, i) => (
+                <RevealOnScroll key={s.num} delayMs={i * 60}>
+                  <div className="station" data-station={i}>
+                    <div className="station-node">
+                      <span className="font-mono text-[0.7rem] font-bold">{s.num}</span>
+                    </div>
+                    <div>
+                      <p className="eyebrow eyebrow--water">{s.stage}</p>
+                      <h3 className="station-title">{s.title}</h3>
+                      <p className="station-text">{s.text}</p>
+                      <div className="chips">
+                        {s.brands.map((b) => (
+                          <span key={b} className="chip">{b}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
-
-          <div className="hidden lg:block">
-            <div className="schematic-panel sticky top-24">
-              <HeroSchematic />
+                </RevealOnScroll>
+              ))}
             </div>
-          </div>
           </div>
         </div>
       </section>
@@ -467,16 +420,18 @@ export default function Home() {
       <section id="showroom" className="section-pad">
         <div className="container-shell grid items-center gap-10 lg:grid-cols-2">
           <RevealOnScroll>
+            <TiltCard className="rounded-2xl">
             <div className="parallax">
               <Image
-                src={`${basePath}/showroom-hero-realistic.png`}
+                src={`${basePath}/showroom-hero-realistic.webp`}
                 alt="Realistic view of bath fittings, bathtub and shower displays in a premium showroom"
-                width={1536}
-                height={864}
+                width={1400}
+                height={700}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="showroom-photo"
               />
             </div>
+            </TiltCard>
           </RevealOnScroll>
           <RevealOnScroll delayMs={100}>
             <p className="eyebrow">The Showroom</p>
@@ -522,7 +477,7 @@ export default function Home() {
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link href="tel:+917305400590" className="btn btn-wa">
+                <Link href="tel:+919842721013" className="btn btn-wa">
                   <PhoneIcon className="h-4 w-4" />
                   Call now
                 </Link>
@@ -541,6 +496,11 @@ export default function Home() {
                 <p className="basin-muted mt-1 text-sm leading-6">
                   143 APT Road, Near CD Building,<br />
                   Erode – 638001, Tamil Nadu
+                </p>
+                <p className="mt-3 text-sm leading-6">
+                  <Link href="tel:+919842721013" className="font-semibold text-white hover:underline">+91 98427 21013</Link>
+                  <span className="basin-muted"> · </span>
+                  <Link href="tel:+919043821013" className="font-semibold text-white hover:underline">+91 90438 21013</Link>
                 </p>
                 <div className="mt-4">
                   <div className="hours-row">

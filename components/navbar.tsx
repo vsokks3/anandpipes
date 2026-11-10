@@ -39,7 +39,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -52,16 +52,16 @@ export function Navbar() {
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <Link
-            href="tel:+917305400590"
+            href="tel:+919842721013"
             className="inline-flex items-center gap-1.5 rounded-md border border-[var(--pipe)] bg-white px-3.5 py-2 text-sm font-semibold text-[var(--pipe)] transition-colors hover:border-[var(--water)] hover:bg-[var(--water-soft)]"
           >
             <PhoneIcon className="h-3.5 w-3.5" />
             Call
           </Link>
           <Link
-            href="https://wa.me/917305400590?text=Hi%20Anand%20Pipe%20Agencies"
+            href="https://wa.me/919842721013?text=Hi%20Anand%20Pipe%20Agencies"
             target="_blank"
             className="rounded-md bg-[var(--wa)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#157F41]"
           >
@@ -70,9 +70,9 @@ export function Navbar() {
         </div>
 
         {/* Mobile controls */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <Link
-            href="https://wa.me/917305400590?text=Hi%20Anand%20Pipe%20Agencies"
+            href="https://wa.me/919842721013?text=Hi%20Anand%20Pipe%20Agencies"
             target="_blank"
             className="rounded-md bg-[var(--wa)] px-3 py-1.5 text-xs font-semibold text-white"
           >
@@ -92,7 +92,7 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div id="mobile-menu" className="border-t border-[var(--line)] bg-[var(--paper)] md:hidden">
+        <div id="mobile-menu" className="border-t border-[var(--line)] bg-[var(--paper)] lg:hidden">
           <nav className="container-shell flex flex-col py-3">
             {navItems.map((item) => (
               <Link
@@ -105,11 +105,18 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="tel:+917305400590"
+              href="tel:+919842721013"
               className="mt-1 flex items-center gap-2 rounded-md border-t border-[var(--line)] px-3 py-3 text-sm font-semibold text-[var(--pipe)]"
             >
               <PhoneIcon className="h-4 w-4" />
-              Call +91 73054 00590
+              Call +91 98427 21013
+            </Link>
+            <Link
+              href="tel:+919043821013"
+              className="flex items-center gap-2 rounded-md px-3 py-3 text-sm font-semibold text-[var(--pipe)]"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              Call +91 90438 21013
             </Link>
           </nav>
         </div>

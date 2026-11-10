@@ -24,11 +24,11 @@ const siteKeywords = [
   "concealed fittings Erode", "bath accessories Erode",
   // Bath & sanitaryware brands
   "Kohler dealer Erode", "Jaquar dealer Erode", "Parryware dealer Erode",
-  "Gravity fittings Erode",
+  "Gravity fittings Erode", "Watertec fittings Erode", "Varmora bath fittings Erode",
   // Pipe brands
   "Finolex pipes Erode", "Ashirvad pipes Erode", "Avonplast pipes Erode",
   // Tank brands
-  "Aquatech tanks Erode",
+  "Sintex tanks Erode", "Aquatech tanks Erode",
   // Pump brands
   "Suguna pumps Erode",
   // Business / location

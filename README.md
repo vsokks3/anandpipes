@@ -93,4 +93,4 @@ After DNS is set, add `anandpipes.in` in **GitHub repo > Settings > Pages > Cust
 
 ## Contact Number
 
-Primary phone and WhatsApp number: `+91 7305400590`.
+Phone numbers: `+91 98427 21013` (primary, also used for WhatsApp links) and `+91 90438 21013`.

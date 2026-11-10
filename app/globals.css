@@ -964,6 +964,181 @@ img, svg, iframe { max-width: 100%; }
 
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+/* ── Hero ripples (WebGL light overlay) ── */
+.hero-ripples {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero-ripples.is-on { opacity: 1; }
+
+/* ── Water Line: 3D stage + journey ── */
+.waterline { --nav-h: 76px; position: relative; }
+
+.waterline-stage { display: none; }
+.waterline-stage[data-mode="3d"] {
+  display: block;
+  position: sticky;
+  top: calc(var(--nav-h) + 0.5rem);
+  z-index: 5;
+  margin-bottom: 1.25rem;
+}
+
+.stage3d {
+  position: relative;
+  overflow: hidden;
+  height: clamp(220px, 36svh, 380px);
+  border-radius: 1rem;
+  border: 1px solid rgba(159, 227, 242, 0.18);
+  background:
+    radial-gradient(120% 90% at 70% 0%, rgba(14, 159, 190, 0.22), transparent 60%),
+    linear-gradient(180deg, #0B2C3D, #061A24);
+  box-shadow: 0 18px 50px rgba(11, 43, 60, 0.28);
+}
+
+.stage3d-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #fff;
+  transition: opacity 0.8s ease;
+}
+.stage3d-fallback .schematic { height: 100%; width: auto; max-width: 100%; }
+.waterline-stage[data-mode="3d"] .stage3d-fallback { opacity: 0.0; }
+.waterline-stage[data-mode="static"] .stage3d-fallback { position: static; }
+
+.stage3d-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity 0.9s ease; }
+.stage3d-canvas canvas { display: block; width: 100%; height: 100%; }
+.waterline-stage[data-ready] .stage3d-canvas { opacity: 1; }
+
+.stage3d-hud {
+  position: absolute;
+  left: 0.85rem;
+  top: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.8rem 0.45rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(4, 20, 28, 0.55);
+  border: 1px solid rgba(159, 227, 242, 0.2);
+  backdrop-filter: blur(6px);
+  color: #EAF6FA;
+  pointer-events: none;
+}
+.stage3d-num {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--water);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #04141C;
+}
+.stage3d-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8FE3F4;
+}
+.stage3d-title { display: block; font-size: 0.85rem; font-weight: 700; line-height: 1.2; }
+
+.stage3d-dots {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  display: flex;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+.stage3d-dots span {
+  width: 18px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(159, 227, 242, 0.25);
+  transition: background 0.4s ease;
+}
+.stage3d-dots span.on { background: var(--water); }
+
+/* active station follows the 3D camera */
+.station .station-node { transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease; }
+.station-title { transition: color 0.35s ease; }
+.station.is-active .station-node {
+  background: var(--water);
+  border-color: var(--water);
+  color: #fff;
+  transform: scale(1.12);
+  box-shadow: 0 0 0 6px rgba(14, 159, 190, 0.16);
+}
+.station.is-active .station-title { color: var(--pipe); }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .stage3d { height: clamp(260px, 40svh, 420px); }
+}
+/* landscape phones: too short for a sticky stage */
+@media (max-width: 1023px) and (max-height: 520px) {
+  .waterline-stage[data-mode="3d"] { position: relative; top: auto; }
+  .stage3d { height: 70svh; min-height: 200px; }
+}
+
+@media (min-width: 1024px) {
+  .waterline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 460px;
+    gap: 2.5rem;
+  }
+  .waterline .journey { grid-column: 1; grid-row: 1; }
+  .waterline-stage,
+  .waterline-stage[data-mode="3d"] {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    position: sticky;
+    top: 6rem;
+    margin: 0;
+  }
+  .stage3d { height: min(620px, calc(100svh - 8rem)); } /* always fully visible while sticky */
+  .waterline-stage[data-mode="static"] .stage3d { height: auto; border-color: var(--line); background: #fff; }
+}
+@media (min-width: 1280px) {
+  .waterline { grid-template-columns: minmax(0, 1fr) 520px; }
+}
+
+/* ── Brand tiles: 3D lift ── */
+.brand-tile {
+  transform: perspective(700px) rotateX(0deg) translateY(0);
+  transition: border-color 0.2s ease, box-shadow 0.3s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.brand-tile:hover {
+  transform: perspective(700px) rotateX(10deg) translateY(-5px);
+  box-shadow: 0 16px 28px rgba(14, 159, 190, 0.18);
+}
+@supports (animation-timeline: view()) {
+  .brand-tile {
+    animation: tileFlip linear backwards; /* no forward fill, so :hover transform still applies */
+    animation-timeline: view(block 100% 10%);
+    animation-range: entry 0% entry 90%;
+  }
+}
+@keyframes tileFlip {
+  from { opacity: 0; transform: perspective(700px) rotateX(-55deg) translateY(24px); }
+  to   { opacity: 1; transform: perspective(700px) rotateX(0deg) translateY(0); }
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -981,6 +1156,8 @@ img, svg, iframe { max-width: 100%; }
   .svg-steam { animation: none; opacity: 0.35; transform: none; }
   .glow-pulse, .glow-soft { animation: none; }
   .vignette-card { animation: none; transform: none; opacity: 1; }
+  .brand-tile { animation: none; transition: none; }
+  .station .station-node, .station-title { transition: none; }
 }
 
 /* ── Responsive ── */
